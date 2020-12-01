@@ -1,0 +1,39 @@
+<html
+        style="margin:8px 0; background-color: black; color:white; font-family: Geneva, Tahoma, sans-serif; font-size: 12px;">
+
+<head>
+        <title> Flail damage </title>
+        <script> 
+                function damage() {
+                       var currentHP = parseInt(document.getElementById("currentHP").value)
+                       var maxHP = parseInt(document.getElementById("maxHP").value)
+
+                       var res = Math.floor(64.0 * currentHP / maxHP)
+
+                       if (res <= 1) return 200
+                       else if (res <= 5) return 150
+                       else if (res <= 12) return 100
+                       else if (res <= 21) return 80
+                       else if (res <= 42) return 40
+                       else return 20 // 43-64
+
+                }
+
+                function output() {
+                        var res = damage()
+                        console.log(res)
+                        document.getElementById("res").innerHTML = "Flail damage: " + res
+                }
+
+              
+        </script>
+</head>
+
+<body>
+        <h4> Flail damage (gen 1-4) </h4>
+        Current HP: <input id="currentHP" type="text" oninput="output()"> </input>
+        HP: <input id="maxHP" type="text" oninput="output()"> </input>
+        <p id="res"> </p>
+</body>
+
+</html>
