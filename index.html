@@ -1,6 +1,6 @@
 <html>
 <head>
-        <title> Flail damage </title>
+        <title> Flail damage calculator </title>
         <script> 
                 function damage() {
                        var currentHP = parseInt(document.getElementById("currentHP").value)
@@ -29,9 +29,9 @@
 
 <body>
         <h4> Flail damage (gen 1-4) </h4>
-        Current HP: <input id="currentHP" type="text" oninput="output()"> </input>
-        HP: <input id="maxHP" type="text" oninput="output()"> </input>
-        <p id="res"> </p>
+        Current HP: <input id="currentHP" type="text" oninput="output()"> </input> </br>
+        Total HP: <input id="maxHP" type="text" oninput="output()"> </input>
+        <span id="res"/>
 </body>
 
 </html>
